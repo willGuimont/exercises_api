@@ -1,0 +1,241 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.35.2.
+--
+-- see: https://github.com/sol/hpack
+
+name:           exercises
+version:        0.1.0.0
+description:    utrain exercise microservice
+homepage:       https://github.com/willGuimont/utrain#readme
+bug-reports:    https://github.com/willGuimont/utrain/issues
+author:         William Guimont-Martin
+maintainer:     william.guimont-martin.1@ulaval.ca
+copyright:      2023 William Guimont-Martin
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    CHANGELOG.md
+
+source-repository head
+  type: git
+  location: https://github.com/willGuimont/utrain
+
+library
+  exposed-modules:
+      AesonUtils
+      Exercise
+      ExerciseApi
+      Logging
+      Persistence
+      Request
+      Server
+      Types
+  other-modules:
+      Paths_exercises
+  hs-source-dirs:
+      src
+  default-extensions:
+      EmptyCase
+      FlexibleContexts
+      FlexibleInstances
+      InstanceSigs
+      MultiParamTypeClasses
+      LambdaCase
+      MultiWayIf
+      NamedFieldPuns
+      TupleSections
+      DeriveFoldable
+      DeriveFunctor
+      DeriveGeneric
+      DeriveLift
+      DeriveTraversable
+      DerivingStrategies
+      GeneralizedNewtypeDeriving
+      StandaloneDeriving
+      BangPatterns
+      KindSignatures
+      TypeOperators
+      OverloadedStrings
+      ScopedTypeVariables
+      TypeApplications
+      ConstraintKinds
+      RankNTypes
+      ExistentialQuantification
+      FunctionalDependencies
+      GADTs
+      DataKinds
+      TypeFamilies
+      TypeFamilyDependencies
+      PolyKinds
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -fprint-potential-instances
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+    , bytestring
+    , containers
+    , cron
+    , errors
+    , esqueleto
+    , exceptions
+    , fast-logger
+    , http-conduit
+    , mtl
+    , optparse-generic
+    , persistent
+    , persistent-sqlite
+    , polysemy
+    , polysemy-plugin
+    , servant
+    , servant-server
+    , text
+    , time
+    , utf8-string
+    , wai
+    , wai-cors
+    , wai-logger
+    , warp
+  default-language: Haskell2010
+
+executable exercises-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_exercises
+  hs-source-dirs:
+      app
+  default-extensions:
+      EmptyCase
+      FlexibleContexts
+      FlexibleInstances
+      InstanceSigs
+      MultiParamTypeClasses
+      LambdaCase
+      MultiWayIf
+      NamedFieldPuns
+      TupleSections
+      DeriveFoldable
+      DeriveFunctor
+      DeriveGeneric
+      DeriveLift
+      DeriveTraversable
+      DerivingStrategies
+      GeneralizedNewtypeDeriving
+      StandaloneDeriving
+      BangPatterns
+      KindSignatures
+      TypeOperators
+      OverloadedStrings
+      ScopedTypeVariables
+      TypeApplications
+      ConstraintKinds
+      RankNTypes
+      ExistentialQuantification
+      FunctionalDependencies
+      GADTs
+      DataKinds
+      TypeFamilies
+      TypeFamilyDependencies
+      PolyKinds
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -fprint-potential-instances -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+    , bytestring
+    , containers
+    , cron
+    , errors
+    , esqueleto
+    , exceptions
+    , exercises
+    , fast-logger
+    , http-conduit
+    , mtl
+    , optparse-generic
+    , persistent
+    , persistent-sqlite
+    , polysemy
+    , polysemy-plugin
+    , servant
+    , servant-server
+    , text
+    , time
+    , utf8-string
+    , wai
+    , wai-cors
+    , wai-logger
+    , warp
+  default-language: Haskell2010
+
+test-suite exercises-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_exercises
+  hs-source-dirs:
+      test
+  default-extensions:
+      EmptyCase
+      FlexibleContexts
+      FlexibleInstances
+      InstanceSigs
+      MultiParamTypeClasses
+      LambdaCase
+      MultiWayIf
+      NamedFieldPuns
+      TupleSections
+      DeriveFoldable
+      DeriveFunctor
+      DeriveGeneric
+      DeriveLift
+      DeriveTraversable
+      DerivingStrategies
+      GeneralizedNewtypeDeriving
+      StandaloneDeriving
+      BangPatterns
+      KindSignatures
+      TypeOperators
+      OverloadedStrings
+      ScopedTypeVariables
+      TypeApplications
+      ConstraintKinds
+      RankNTypes
+      ExistentialQuantification
+      FunctionalDependencies
+      GADTs
+      DataKinds
+      TypeFamilies
+      TypeFamilyDependencies
+      PolyKinds
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -fprint-potential-instances -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      QuickCheck
+    , aeson
+    , base >=4.7 && <5
+    , bytestring
+    , containers
+    , cron
+    , errors
+    , esqueleto
+    , exceptions
+    , exercises
+    , fast-logger
+    , hspec
+    , http-conduit
+    , mtl
+    , optparse-generic
+    , persistent
+    , persistent-sqlite
+    , polysemy
+    , polysemy-plugin
+    , servant
+    , servant-server
+    , text
+    , time
+    , utf8-string
+    , wai
+    , wai-cors
+    , wai-logger
+    , warp
+  default-language: Haskell2010
